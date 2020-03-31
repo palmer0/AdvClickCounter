@@ -5,7 +5,8 @@ import java.nio.ByteBuffer;
 import java.util.Objects;
 import java.util.UUID;
 
-public class ClickData {
+public class ClickData implements BaseData {
+
 
   // put the view state here
   public Long id;
@@ -14,6 +15,11 @@ public class ClickData {
   public ClickData() {
     id = generateUniqueId();
     value = 0;
+  }
+
+  @Override
+  public Integer getValue() {
+    return value;
   }
 
   /**
@@ -44,7 +50,7 @@ public class ClickData {
   @Override
   public boolean equals(Object obj) {
     if (this == obj) return true;
-    if (!(obj instanceof ClickData)) return false;
+    if (!(obj instanceof BaseData)) return false;
     ClickData data = (ClickData) obj;
     return Objects.equals(id, data.id);
   }
@@ -53,4 +59,6 @@ public class ClickData {
   public String toString() {
     return String.valueOf(value);
   }
+
+
 }

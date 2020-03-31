@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
-public class CounterData {
+public class CounterData implements BaseData {
 
   // put the view state here
   public Long id;
@@ -18,6 +18,11 @@ public class CounterData {
     id = generateUniqueId();
     value = 0;
     clicks= new ArrayList<>();
+  }
+
+  @Override
+  public Integer getValue() {
+    return value;
   }
 
   /**

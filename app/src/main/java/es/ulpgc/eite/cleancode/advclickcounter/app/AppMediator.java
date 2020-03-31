@@ -34,7 +34,9 @@ public class AppMediator extends Application {
   }
 
   public ClickToCounterState getNextMasterScreenState() {
-    return clickToCounterState;
+    ClickToCounterState state = clickToCounterState;
+    clickToCounterState= null;
+    return state;
   }
 
   public void setPreviousDetailScreenState(ClickToCounterState state) {
@@ -42,6 +44,8 @@ public class AppMediator extends Application {
   }
 
   public CounterToClickState getPreviousDetailScreenState() {
-    return counterToClickState;
+    CounterToClickState state = counterToClickState;
+    counterToClickState= null;
+    return state;
   }
 }
