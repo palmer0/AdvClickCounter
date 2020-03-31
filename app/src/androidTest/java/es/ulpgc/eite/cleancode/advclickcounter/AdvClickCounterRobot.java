@@ -24,23 +24,26 @@ public class AdvClickCounterRobot {
 
         return new TypeSafeMatcher<View>() {
 
-            @Override public boolean matchesSafely (final View view) {
+            @Override
+            public boolean matchesSafely(final View view) {
                 return ((ListView) view).getCount() == size;
             }
 
-            @Override public void describeTo (final Description description) {
+            @Override
+            public void describeTo(final Description description) {
                 description.appendText("ListView should have " + size + " items");
             }
         };
     }
 
-    private static Matcher<View> withValueAtPosition(final int val, final int pos) {
+    private static Matcher<View> withValueAtPosition(final int val,final int pos) {
 
         return new TypeSafeMatcher<View>() {
 
-            @Override public boolean matchesSafely (final View view) {
+            @Override
+            public boolean matchesSafely(final View view) {
                 int size = ((ListView) view).getCount();
-                if(pos >= size) {
+                if (pos >= size) {
                     return false;
                 }
 
@@ -49,7 +52,8 @@ public class AdvClickCounterRobot {
                 return item.getValue() == val;
             }
 
-            @Override public void describeTo (final Description description) {
+            @Override
+            public void describeTo(final Description description) {
                 description.appendText(
                     "ListView should have " + val + " item at position " + pos
                 );

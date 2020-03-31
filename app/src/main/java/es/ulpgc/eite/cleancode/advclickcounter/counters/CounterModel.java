@@ -13,18 +13,11 @@ public class CounterModel implements CounterContract.Model {
   public static String TAG = CounterModel.class.getSimpleName();
 
   private List<CounterData> counters;
-  //private String data;
 
   public CounterModel() {
     counters = new ArrayList<>();
   }
 
-
-  /*
-  public CounterModel(String data) {
-    this.data = data;
-  }
-  */
 
   @Override
   public List<CounterData> getStoredCounterList() {
@@ -58,10 +51,4 @@ public class CounterModel implements CounterContract.Model {
     counters.set(counters.indexOf(counter), counter);
   }
 
-  /*
-  @Override
-  public void onDataFromPreviousScreen(String data) {
-    // Log.e(TAG, "onDataFromPreviousScreen()");
-  }
-  */
 }

@@ -48,7 +48,6 @@ public interface CounterContract {
 
     void onAddCounter(CounterData counter);
 
-    //void onDataFromPreviousScreen(String data);
   }
 
   interface Router {
@@ -56,10 +55,7 @@ public interface CounterContract {
 
     void passStateToNextScreen(CounterToClickState state);
 
-    //CounterState getStateFromPreviousScreen();
-
     ClickToCounterState getStateFromNextScreen();
 
-    //void passStateToPreviousScreen(CounterState state);
   }
 }

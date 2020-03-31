@@ -42,8 +42,6 @@ public interface ClickContract {
   interface Model {
     CounterData getStoredData();
 
-    //void onDataFromNextScreen(String data);
-
     void onRestartScreen(CounterData counter);
 
     void onDataFromPreviousScreen(CounterData counter);
@@ -54,13 +52,8 @@ public interface ClickContract {
   }
 
   interface Router {
-    //void navigateToNextScreen();
-
-    //void passStateToNextScreen(ClickState state);
 
     CounterToClickState getStateFromPreviousScreen();
-
-    //ClickState getStateFromNextScreen();
 
     void passStateToPreviousScreen(ClickToCounterState state);
   }

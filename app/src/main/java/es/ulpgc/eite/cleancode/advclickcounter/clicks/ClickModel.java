@@ -7,15 +7,8 @@ public class ClickModel implements ClickContract.Model {
 
   public static String TAG = ClickModel.class.getSimpleName();
 
-  //private String data;
   public CounterData counter;
-  //public List<ClickData> clicks;
 
-  /*
-  public ClickModel(String data) {
-    this.data = data;
-  }
-  */
 
   @Override
   public CounterData getStoredData() {
@@ -29,12 +22,6 @@ public class ClickModel implements ClickContract.Model {
     this.counter=counter;
   }
 
-  /*
-  @Override
-  public void onDataFromNextScreen(String data) {
-    // Log.e(TAG, "onDataFromNextScreen()");
-  }
-  */
 
   @Override
   public void onDataFromPreviousScreen(CounterData counter) {

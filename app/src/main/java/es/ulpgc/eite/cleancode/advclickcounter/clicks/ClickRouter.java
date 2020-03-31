@@ -14,26 +14,6 @@ public class ClickRouter implements ClickContract.Router {
     this.mediator = mediator;
   }
 
-  /*
-  @Override
-  public void navigateToNextScreen() {
-    Context context = mediator.getApplicationContext();
-    Intent intent = new Intent(context, ClickActivity.class);
-    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    context.startActivity(intent);
-  }
-
-  @Override
-  public void passStateToNextScreen(ClickState state) {
-    mediator.setNextDetailScreenState(state);
-  }
-
-
-  @Override
-  public ClickState getStateFromNextScreen() {
-    return mediator.getNextDetailScreenState();
-  }
-  */
 
   @Override
   public void passStateToPreviousScreen(ClickToCounterState state) {

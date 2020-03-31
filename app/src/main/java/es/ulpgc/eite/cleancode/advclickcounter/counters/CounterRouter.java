@@ -31,17 +31,6 @@ public class CounterRouter implements CounterContract.Router {
     mediator.setNextMasterScreenState(state);
   }
 
-  /*
-  @Override
-  public void passStateToPreviousScreen(CounterState state) {
-    mediator.setPreviousMasterScreenState(state);
-  }
-
-  @Override
-  public CounterState getStateFromPreviousScreen() {
-    return mediator.getPreviousMasterScreenState();
-  }
-  */
 
   @Override
   public ClickToCounterState getStateFromNextScreen() {

@@ -37,9 +37,14 @@ public class AdvClickCounterTests {
         Activity activity = rule.getActivity();
 
         if(orientation  == Configuration.ORIENTATION_PORTRAIT) {
-            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+            activity.setRequestedOrientation(
+                ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+            );
+
         } else {
-            activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            activity.setRequestedOrientation(
+                ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+            );
         }
 
         try {

@@ -6,6 +6,4 @@ public class ClickViewModel {
 
   // put the view state here
   public CounterData counter;
-  //public List<ClickData> clicks;
-  //public String data;
 }

@@ -30,15 +30,6 @@ public class CounterPresenter implements CounterContract.Presenter {
       state = new CounterState();
     }
 
-    /*
-    // use passed state if is necessary
-    CounterState savedState = router.getStateFromPreviousScreen();
-    if (savedState != null) {
-
-      // update the model if is necessary
-      model.onDataFromPreviousScreen(savedState.data);
-    }
-    */
   }
 
   @Override
@@ -99,7 +90,6 @@ public class CounterPresenter implements CounterContract.Presenter {
     Log.e(TAG, "onCounterButtonPressed()");
 
     model.onAddCounter(new CounterData());
-
     onResume();
   }
 
