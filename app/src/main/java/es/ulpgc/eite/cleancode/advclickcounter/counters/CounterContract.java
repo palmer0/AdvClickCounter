@@ -4,7 +4,7 @@ import java.lang.ref.WeakReference;
 import java.util.List;
 
 import es.ulpgc.eite.cleancode.advclickcounter.app.ClickToCounterState;
-import es.ulpgc.eite.cleancode.advclickcounter.app.CounterData;
+import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 import es.ulpgc.eite.cleancode.advclickcounter.app.CounterToClickState;
 
 public interface CounterContract {

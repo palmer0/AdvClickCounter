@@ -1,4 +1,4 @@
-package es.ulpgc.eite.cleancode.advclickcounter.app;
+package es.ulpgc.eite.cleancode.advclickcounter.data;
 
 public interface BaseData {
 

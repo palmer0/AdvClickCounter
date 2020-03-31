@@ -7,7 +7,7 @@ import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 
-import es.ulpgc.eite.cleancode.advclickcounter.app.BaseData;
+import es.ulpgc.eite.cleancode.advclickcounter.data.BaseData;
 
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;

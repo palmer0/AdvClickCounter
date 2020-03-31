@@ -2,7 +2,7 @@ package es.ulpgc.eite.cleancode.advclickcounter.counters;
 
 import java.util.List;
 
-import es.ulpgc.eite.cleancode.advclickcounter.app.CounterData;
+import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 
 public class CounterViewModel {
 

@@ -6,9 +6,9 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import es.ulpgc.eite.cleancode.advclickcounter.app.ClickData;
+import es.ulpgc.eite.cleancode.advclickcounter.data.ClickData;
 import es.ulpgc.eite.cleancode.advclickcounter.R;
-import es.ulpgc.eite.cleancode.advclickcounter.app.CounterData;
+import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 
 public class ClickActivity
     extends AppCompatActivity implements ClickContract.View {

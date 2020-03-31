@@ -1,6 +1,6 @@
 package es.ulpgc.eite.cleancode.advclickcounter.clicks;
 
-import es.ulpgc.eite.cleancode.advclickcounter.app.CounterData;
+import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 
 public class ClickViewModel {
 

@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import es.ulpgc.eite.cleancode.advclickcounter.app.ClickData;
+import es.ulpgc.eite.cleancode.advclickcounter.data.ClickData;
 import es.ulpgc.eite.cleancode.advclickcounter.R;
 
 

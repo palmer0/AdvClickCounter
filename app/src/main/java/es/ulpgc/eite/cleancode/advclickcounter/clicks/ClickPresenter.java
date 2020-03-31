@@ -2,7 +2,7 @@ package es.ulpgc.eite.cleancode.advclickcounter.clicks;
 
 import java.lang.ref.WeakReference;
 
-import es.ulpgc.eite.cleancode.advclickcounter.app.ClickData;
+import es.ulpgc.eite.cleancode.advclickcounter.data.ClickData;
 import es.ulpgc.eite.cleancode.advclickcounter.app.ClickToCounterState;
 import es.ulpgc.eite.cleancode.advclickcounter.app.CounterToClickState;
 
