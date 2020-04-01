@@ -7,12 +7,12 @@ import es.ulpgc.eite.cleancode.advclickcounter.app.ClickToCounterState;
 import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 import es.ulpgc.eite.cleancode.advclickcounter.app.CounterToClickState;
 
-public interface ClickContract {
+public interface ClickListContract {
 
   interface View {
     void injectPresenter(Presenter presenter);
 
-    void onDataUpdated(ClickViewModel viewModel);
+    void onDataUpdated(ClickListViewModel viewModel);
   }
 
   interface Presenter {

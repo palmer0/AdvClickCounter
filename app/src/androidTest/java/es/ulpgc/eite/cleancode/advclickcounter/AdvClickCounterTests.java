@@ -15,7 +15,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import es.ulpgc.eite.cleancode.advclickcounter.counters.CounterActivity;
+import es.ulpgc.eite.cleancode.advclickcounter.counters.CounterListActivity;
 
 @RunWith(AndroidJUnit4.class)
 @LargeTest
@@ -23,8 +23,8 @@ public class AdvClickCounterTests {
 
 
     @Rule
-    public ActivityTestRule<CounterActivity> rule =
-        new ActivityTestRule<>(CounterActivity.class);
+    public ActivityTestRule<CounterListActivity> rule =
+        new ActivityTestRule<>(CounterListActivity.class);
 
     public AdvClickCounterRobot robot = new AdvClickCounterRobot();
 

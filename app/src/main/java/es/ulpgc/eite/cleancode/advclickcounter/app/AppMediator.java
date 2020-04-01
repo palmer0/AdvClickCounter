@@ -2,13 +2,13 @@ package es.ulpgc.eite.cleancode.advclickcounter.app;
 
 import android.app.Application;
 
-import es.ulpgc.eite.cleancode.advclickcounter.clicks.ClickState;
-import es.ulpgc.eite.cleancode.advclickcounter.counters.CounterState;
+import es.ulpgc.eite.cleancode.advclickcounter.clicks.ClickListState;
+import es.ulpgc.eite.cleancode.advclickcounter.counters.CounterListState;
 
 public class AppMediator extends Application {
 
-  private CounterState counterState;
-  private ClickState clickState;
+  private CounterListState counterListState;
+  private ClickListState clickListState;
 
   private ClickToCounterState clickToCounterState;
   private CounterToClickState counterToClickState;
@@ -17,16 +17,16 @@ public class AppMediator extends Application {
   public void onCreate() {
     super.onCreate();
 
-    counterState =new CounterState();
-    clickState = new ClickState();
+    counterListState =new CounterListState();
+    clickListState = new ClickListState();
   }
 
-  public CounterState getCounterState() {
-    return counterState;
+  public CounterListState getCounterListState() {
+    return counterListState;
   }
 
-  public ClickState getClickState() {
-    return clickState;
+  public ClickListState getClickListState() {
+    return clickListState;
   }
 
   public void setNextMasterScreenState(CounterToClickState state) {

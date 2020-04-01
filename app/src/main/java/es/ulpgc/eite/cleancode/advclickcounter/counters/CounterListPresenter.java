@@ -8,16 +8,16 @@ import es.ulpgc.eite.cleancode.advclickcounter.app.ClickToCounterState;
 import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 import es.ulpgc.eite.cleancode.advclickcounter.app.CounterToClickState;
 
-public class CounterPresenter implements CounterContract.Presenter {
+public class CounterListPresenter implements CounterListContract.Presenter {
 
-  public static String TAG = CounterPresenter.class.getSimpleName();
+  public static String TAG = CounterListPresenter.class.getSimpleName();
 
-  private WeakReference<CounterContract.View> view;
-  private CounterState state;
-  private CounterContract.Model model;
-  private CounterContract.Router router;
+  private WeakReference<CounterListContract.View> view;
+  private CounterListState state;
+  private CounterListContract.Model model;
+  private CounterListContract.Router router;
 
-  public CounterPresenter(CounterState state) {
+  public CounterListPresenter(CounterListState state) {
     this.state = state;
   }
 
@@ -27,7 +27,7 @@ public class CounterPresenter implements CounterContract.Presenter {
 
     // initialize the state if is necessary
     if (state == null) {
-      state = new CounterState();
+      state = new CounterListState();
     }
 
   }
@@ -94,17 +94,17 @@ public class CounterPresenter implements CounterContract.Presenter {
   }
 
   @Override
-  public void injectView(WeakReference<CounterContract.View> view) {
+  public void injectView(WeakReference<CounterListContract.View> view) {
     this.view = view;
   }
 
   @Override
-  public void injectModel(CounterContract.Model model) {
+  public void injectModel(CounterListContract.Model model) {
     this.model = model;
   }
 
   @Override
-  public void injectRouter(CounterContract.Router router) {
+  public void injectRouter(CounterListContract.Router router) {
     this.router = router;
   }
 }

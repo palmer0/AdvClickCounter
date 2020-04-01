@@ -11,9 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".clicks.ClickActivity"/>
+        <activity android:name=".clicks.ClickListActivity"/>
 
-        <activity android:name=".counters.CounterActivity">
+        <activity android:name=".counters.CounterListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

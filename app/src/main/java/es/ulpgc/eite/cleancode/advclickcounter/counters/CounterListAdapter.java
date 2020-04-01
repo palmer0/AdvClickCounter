@@ -13,13 +13,13 @@ import es.ulpgc.eite.cleancode.advclickcounter.R;
 import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 
 
-public class CounterAdapter extends ArrayAdapter<CounterData> {
+public class CounterListAdapter extends ArrayAdapter<CounterData> {
 
   private final List<CounterData> itemList;
   private final View.OnClickListener clickListener;
 
 
-  public CounterAdapter(
+  public CounterListAdapter(
       Context ctx, List<CounterData> items, View.OnClickListener listener) {
 
     super(ctx, 0, items);

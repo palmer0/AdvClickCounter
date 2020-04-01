@@ -6,16 +6,16 @@ import es.ulpgc.eite.cleancode.advclickcounter.data.ClickData;
 import es.ulpgc.eite.cleancode.advclickcounter.app.ClickToCounterState;
 import es.ulpgc.eite.cleancode.advclickcounter.app.CounterToClickState;
 
-public class ClickPresenter implements ClickContract.Presenter {
+public class ClickListPresenter implements ClickListContract.Presenter {
 
-  public static String TAG = ClickPresenter.class.getSimpleName();
+  public static String TAG = ClickListPresenter.class.getSimpleName();
 
-  private WeakReference<ClickContract.View> view;
-  private ClickState state;
-  private ClickContract.Model model;
-  private ClickContract.Router router;
+  private WeakReference<ClickListContract.View> view;
+  private ClickListState state;
+  private ClickListContract.Model model;
+  private ClickListContract.Router router;
 
-  public ClickPresenter(ClickState state) {
+  public ClickListPresenter(ClickListState state) {
     this.state = state;
   }
 
@@ -25,7 +25,7 @@ public class ClickPresenter implements ClickContract.Presenter {
 
     // initialize the state if is necessary
     if (state == null) {
-      state = new ClickState();
+      state = new ClickListState();
     }
 
     // use passed state if is necessary
@@ -93,17 +93,17 @@ public class ClickPresenter implements ClickContract.Presenter {
   }
 
   @Override
-  public void injectView(WeakReference<ClickContract.View> view) {
+  public void injectView(WeakReference<ClickListContract.View> view) {
     this.view = view;
   }
 
   @Override
-  public void injectModel(ClickContract.Model model) {
+  public void injectModel(ClickListContract.Model model) {
     this.model = model;
   }
 
   @Override
-  public void injectRouter(ClickContract.Router router) {
+  public void injectRouter(ClickListContract.Router router) {
     this.router = router;
   }
 }

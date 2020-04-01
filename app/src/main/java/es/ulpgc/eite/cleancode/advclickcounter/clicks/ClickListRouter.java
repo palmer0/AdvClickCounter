@@ -4,13 +4,13 @@ import es.ulpgc.eite.cleancode.advclickcounter.app.AppMediator;
 import es.ulpgc.eite.cleancode.advclickcounter.app.ClickToCounterState;
 import es.ulpgc.eite.cleancode.advclickcounter.app.CounterToClickState;
 
-public class ClickRouter implements ClickContract.Router {
+public class ClickListRouter implements ClickListContract.Router {
 
-  public static String TAG = ClickRouter.class.getSimpleName();
+  public static String TAG = ClickListRouter.class.getSimpleName();
 
   private AppMediator mediator;
 
-  public ClickRouter(AppMediator mediator) {
+  public ClickListRouter(AppMediator mediator) {
     this.mediator = mediator;
   }
 

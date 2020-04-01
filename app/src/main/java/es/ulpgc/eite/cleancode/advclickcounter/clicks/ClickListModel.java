@@ -3,9 +3,9 @@ package es.ulpgc.eite.cleancode.advclickcounter.clicks;
 import es.ulpgc.eite.cleancode.advclickcounter.data.ClickData;
 import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 
-public class ClickModel implements ClickContract.Model {
+public class ClickListModel implements ClickListContract.Model {
 
-  public static String TAG = ClickModel.class.getSimpleName();
+  public static String TAG = ClickListModel.class.getSimpleName();
 
   public CounterData counter;
 

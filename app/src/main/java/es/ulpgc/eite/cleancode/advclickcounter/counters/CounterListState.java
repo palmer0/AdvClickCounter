@@ -1,6 +1,6 @@
 package es.ulpgc.eite.cleancode.advclickcounter.counters;
 
-public class CounterState extends CounterViewModel {
+public class CounterListState extends CounterListViewModel {
 
   // put the model state here
 

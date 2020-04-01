@@ -1,4 +1,4 @@
-package es.ulpgc.eite.cleancode.advclickcounter.counters;
+package es.ulpgc.eite.cleancode.advclickcounter.clicks;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,24 +6,25 @@ import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import es.ulpgc.eite.cleancode.advclickcounter.data.ClickData;
 import es.ulpgc.eite.cleancode.advclickcounter.R;
 import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 
-public class CounterActivity
-    extends AppCompatActivity implements CounterContract.View {
+public class ClickListActivity
+    extends AppCompatActivity implements ClickListContract.View {
 
-  public static String TAG = CounterActivity.class.getSimpleName();
+  public static String TAG = ClickListActivity.class.getSimpleName();
 
-  private CounterContract.Presenter presenter;
+  private ClickListContract.Presenter presenter;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_counter);
-    getSupportActionBar().setTitle(R.string.counter_title);
+    setContentView(R.layout.activity_click);
+    getSupportActionBar().setTitle(R.string.click_title);
 
     // do the setup
-    CounterScreen.configure(this);
+    ClickListScreen.configure(this);
 
     if (savedInstanceState == null) {
       presenter.onStart();
@@ -63,30 +64,31 @@ public class CounterActivity
   }
 
 
-  public void onCounterButtonPressed(View view) {
-    presenter.onCounterButtonPressed();
+  public void onClickButtonPressed(View view) {
+    presenter.onClickButtonPressed();
   }
 
   @Override
-  public void onDataUpdated(CounterViewModel viewModel) {
+  public void onDataUpdated(ClickListViewModel viewModel) {
     //Log.e(TAG, "onDataUpdated()");
 
+    CounterData counter = viewModel.counter;
+
     // deal with the datasource
-    ((ListView) findViewById(R.id.counterList)).setAdapter(new CounterAdapter(
-            this, viewModel.counters, new View.OnClickListener() {
+    ((ListView) findViewById(R.id.clickList)).setAdapter(new ClickListAdapter(
+            this, counter.clicks, new View.OnClickListener() {
 
           @Override
           public void onClick(View view) {
-            CounterData counter = (CounterData) view.getTag();
-            presenter.onListPressed(counter);
+            ClickData data = (ClickData) view.getTag();
+            presenter.onClickListPressed(data);
           }
         })
     );
   }
 
-
   @Override
-  public void injectPresenter(CounterContract.Presenter presenter) {
+  public void injectPresenter(ClickListContract.Presenter presenter) {
     this.presenter = presenter;
   }
 

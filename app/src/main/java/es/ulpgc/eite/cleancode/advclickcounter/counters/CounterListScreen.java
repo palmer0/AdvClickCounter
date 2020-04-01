@@ -1,4 +1,4 @@
-package es.ulpgc.eite.cleancode.advclickcounter.clicks;
+package es.ulpgc.eite.cleancode.advclickcounter.counters;
 
 import androidx.fragment.app.FragmentActivity;
 
@@ -6,19 +6,19 @@ import java.lang.ref.WeakReference;
 
 import es.ulpgc.eite.cleancode.advclickcounter.app.AppMediator;
 
-public class ClickScreen {
+public class CounterListScreen {
 
-  public static void configure(ClickContract.View view) {
+  public static void configure(CounterListContract.View view) {
 
     WeakReference<FragmentActivity> context =
         new WeakReference<>((FragmentActivity) view);
 
     AppMediator mediator = (AppMediator) context.get().getApplication();
-    ClickState state = mediator.getClickState();
+    CounterListState state = mediator.getCounterListState();
 
-    ClickContract.Router router = new ClickRouter(mediator);
-    ClickContract.Presenter presenter = new ClickPresenter(state);
-    ClickContract.Model model = new ClickModel();
+    CounterListContract.Router router = new CounterListRouter(mediator);
+    CounterListContract.Presenter presenter = new CounterListPresenter(state);
+    CounterListContract.Model model = new CounterListModel();
     presenter.injectModel(model);
     presenter.injectRouter(router);
     presenter.injectView(new WeakReference<>(view));

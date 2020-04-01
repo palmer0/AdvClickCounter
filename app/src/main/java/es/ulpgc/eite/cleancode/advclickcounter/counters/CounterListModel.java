@@ -8,13 +8,13 @@ import java.util.List;
 import es.ulpgc.eite.cleancode.advclickcounter.data.ClickData;
 import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 
-public class CounterModel implements CounterContract.Model {
+public class CounterListModel implements CounterListContract.Model {
 
-  public static String TAG = CounterModel.class.getSimpleName();
+  public static String TAG = CounterListModel.class.getSimpleName();
 
   private List<CounterData> counters;
 
-  public CounterModel() {
+  public CounterListModel() {
     counters = new ArrayList<>();
   }
 
