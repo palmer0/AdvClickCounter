@@ -1,12 +1,12 @@
 Feature: contador de clicks avanzado
 
-  Scenario: 01 - crear primer contador
+  Scenario: 01 crear primer contador
     Given mostramos lista de contadores con dimension "0"
     When pulsamos boton de lista de contadores
     Then mostramos contador en lista en posicion "0" con valor "0"
     And mostramos lista de contadores con dimension "1"
 
-  Scenario: 02 - crear segundo contador
+  Scenario: 02 crear segundo contador
     Given mostramos lista de contadores con dimension "0"
     When pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -14,7 +14,7 @@ Feature: contador de clicks avanzado
     And mostramos contador en lista en posicion "1" con valor "0"
     And mostramos lista de contadores con dimension "2"
     
-  Scenario: 03 - pulsar en segundo contador
+  Scenario: 03 pulsar en segundo contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -24,7 +24,7 @@ Feature: contador de clicks avanzado
     When pulsamos boton de contador en posicion "1"
     Then mostramos lista de clics con dimension "0"
 
-  Scenario: 04 - crear primer clic en segundo contador
+  Scenario: 04 crear primer clic en segundo contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -39,7 +39,7 @@ Feature: contador de clicks avanzado
 
 
 
-  Scenario: 05 - crear segundo clic en segundo contador
+  Scenario: 05 crear segundo clic en segundo contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -55,7 +55,7 @@ Feature: contador de clicks avanzado
     And mostramos lista de clics con dimension "2"
 
 
-  Scenario: 06 - pulsar en primer clic en segundo contador
+  Scenario: 06 pulsar en primer clic en segundo contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -75,7 +75,7 @@ Feature: contador de clicks avanzado
     And mostramos lista de clics con dimension "2"
 
 
-  Scenario: 07 - pulsar nuevamente en primer clic en segundo contador
+  Scenario: 07 pulsar nuevamente en primer clic en segundo contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -96,7 +96,7 @@ Feature: contador de clicks avanzado
     And mostramos lista de clics con dimension "2"
 
 
-  Scenario: 08 - pulsar en segundo clic en segundo contador
+  Scenario: 08 pulsar en segundo clic en segundo contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -117,7 +117,7 @@ Feature: contador de clicks avanzado
     And mostramos clic en lista en posicion "1" con valor "1"
     And mostramos lista de clics con dimension "2"
 
-  Scenario: 09 - pulsar back en segundo clic en segundo contador
+  Scenario: 09 pulsar back en segundo clic en segundo contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -143,7 +143,7 @@ Feature: contador de clicks avanzado
     And mostramos lista de contadores con dimension "2"
 
 
-  Scenario: 10 - crear tercer contador
+  Scenario: 10 crear tercer contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -174,7 +174,7 @@ Feature: contador de clicks avanzado
     And mostramos lista de contadores con dimension "3"
 
 
-  Scenario: 11 - pulsar en tercer contador
+  Scenario: 11 pulsar en tercer contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -208,7 +208,7 @@ Feature: contador de clicks avanzado
 
 
 
-  Scenario: 12 - crear primer clic en tercer contador
+  Scenario: 12 crear primer clic en tercer contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -245,7 +245,7 @@ Feature: contador de clicks avanzado
 
 
 
-  Scenario: 13 - pulsar en primer clic en tercer contador
+  Scenario: 13 pulsar en primer clic en tercer contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -285,7 +285,7 @@ Feature: contador de clicks avanzado
 
 
 
-  Scenario: 14 - pulsar nuevamente en primer clic en tercer contador
+  Scenario: 14 pulsar nuevamente en primer clic en tercer contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -326,7 +326,7 @@ Feature: contador de clicks avanzado
 
 
 
-  Scenario: 15 - pulsar back en primer clic en tercer contador
+  Scenario: 15 pulsar back en primer clic en tercer contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -372,7 +372,7 @@ Feature: contador de clicks avanzado
 
 
 
-  Scenario: 16 - pulsar en primer contador
+  Scenario: 16 pulsar en primer contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -420,7 +420,7 @@ Feature: contador de clicks avanzado
 
 
 
-  Scenario: 17 - crear primer clic en primer contador
+  Scenario: 17 crear primer clic en primer contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
@@ -472,7 +472,7 @@ Feature: contador de clicks avanzado
 
 
 
-  Scenario: 18 - pulsar back en primer clic en primer contador
+  Scenario: 18 pulsar back en primer clic en primer contador
     Given mostramos lista de contadores con dimension "0"
     And pulsamos boton de lista de contadores
     And pulsamos boton de lista de contadores
