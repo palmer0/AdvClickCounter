@@ -13,6 +13,8 @@ public interface CounterListContract {
     void injectPresenter(Presenter presenter);
 
     void onDataUpdated(CounterListViewModel viewModel);
+    void navigateToNextScreen();
+
   }
 
   interface Presenter {
@@ -51,7 +53,6 @@ public interface CounterListContract {
   }
 
   interface Router {
-    void navigateToNextScreen();
 
     void passStateToNextScreen(CounterToClickState state);
 

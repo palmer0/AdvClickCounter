@@ -82,7 +82,7 @@ public class CounterListPresenter implements CounterListContract.Presenter {
     Log.e(TAG, "onClickListPressed()");
 
     router.passStateToNextScreen(new CounterToClickState(counter));
-    router.navigateToNextScreen();
+    view.get().navigateToNextScreen();
   }
 
   @Override

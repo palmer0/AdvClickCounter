@@ -1,5 +1,6 @@
 package es.ulpgc.eite.cleancode.advclickcounter.counters;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -7,6 +8,8 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import es.ulpgc.eite.cleancode.advclickcounter.R;
+import es.ulpgc.eite.cleancode.advclickcounter.app.AppMediator;
+import es.ulpgc.eite.cleancode.advclickcounter.clicks.ClickListActivity;
 import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 
 public class CounterListActivity
@@ -21,6 +24,10 @@ public class CounterListActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_counter);
     getSupportActionBar().setTitle(R.string.counter_title);
+
+    if (savedInstanceState == null) {
+      AppMediator.resetInstance();
+    }
 
     // do the setup
     CounterListScreen.configure(this);
@@ -84,6 +91,12 @@ public class CounterListActivity
     );
   }
 
+
+  @Override
+  public void navigateToNextScreen() {
+    Intent intent = new Intent(this, ClickListActivity.class);
+    startActivity(intent);
+  }
 
   @Override
   public void injectPresenter(CounterListContract.Presenter presenter) {
