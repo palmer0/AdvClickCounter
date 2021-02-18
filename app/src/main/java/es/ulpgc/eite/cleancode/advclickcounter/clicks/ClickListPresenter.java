@@ -2,6 +2,7 @@ package es.ulpgc.eite.cleancode.advclickcounter.clicks;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.eite.cleancode.advclickcounter.app.AppMediator;
 import es.ulpgc.eite.cleancode.advclickcounter.data.ClickData;
 import es.ulpgc.eite.cleancode.advclickcounter.app.ClickToCounterState;
 import es.ulpgc.eite.cleancode.advclickcounter.app.CounterToClickState;
@@ -13,11 +14,17 @@ public class ClickListPresenter implements ClickListContract.Presenter {
   private WeakReference<ClickListContract.View> view;
   private ClickListState state;
   private ClickListContract.Model model;
-  private ClickListContract.Router router;
+  //private ClickListContract.Router router;
+  private AppMediator mediator;
 
-  public ClickListPresenter(ClickListState state) {
-    this.state = state;
+  public ClickListPresenter(AppMediator mediator) {
+    this.mediator = mediator;
+    state = mediator.getClickListState();
   }
+
+//  public ClickListPresenter(ClickListState state) {
+//    this.state = state;
+//  }
 
   @Override
   public void onStart() {
@@ -29,7 +36,8 @@ public class ClickListPresenter implements ClickListContract.Presenter {
     }
 
     // use passed state if is necessary
-    CounterToClickState savedState = router.getStateFromPreviousScreen();
+    CounterToClickState savedState = getStateFromPreviousScreen();
+    //CounterToClickState savedState = router.getStateFromPreviousScreen();
     if (savedState != null) {
 
       // update the model if is necessary
@@ -61,9 +69,13 @@ public class ClickListPresenter implements ClickListContract.Presenter {
   public void onBackPressed() {
     // Log.e(TAG, "onBackPressed()");
 
+    passStateToPreviousScreen(new ClickToCounterState(state.counter));
+
+    /*
     router.passStateToPreviousScreen(
         new ClickToCounterState(state.counter)
     );
+    */
   }
 
   @Override
@@ -74,6 +86,14 @@ public class ClickListPresenter implements ClickListContract.Presenter {
   @Override
   public void onDestroy() {
     // Log.e(TAG, "onDestroy()");
+  }
+
+  private void passStateToPreviousScreen(ClickToCounterState state) {
+    mediator.setPreviousDetailScreenState(state);
+  }
+
+  private CounterToClickState getStateFromPreviousScreen() {
+    return mediator.getPreviousDetailScreenState();
   }
 
   @Override
@@ -102,8 +122,9 @@ public class ClickListPresenter implements ClickListContract.Presenter {
     this.model = model;
   }
 
-  @Override
-  public void injectRouter(ClickListContract.Router router) {
-    this.router = router;
-  }
+//  @Override
+//  public void injectRouter(ClickListContract.Router router) {
+//    this.router = router;
+//  }
+
 }

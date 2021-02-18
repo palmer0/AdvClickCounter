@@ -4,6 +4,7 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.eite.cleancode.advclickcounter.app.AppMediator;
 import es.ulpgc.eite.cleancode.advclickcounter.app.ClickToCounterState;
 import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 import es.ulpgc.eite.cleancode.advclickcounter.app.CounterToClickState;
@@ -15,11 +16,17 @@ public class CounterListPresenter implements CounterListContract.Presenter {
   private WeakReference<CounterListContract.View> view;
   private CounterListState state;
   private CounterListContract.Model model;
-  private CounterListContract.Router router;
+  //private CounterListContract.Router router;
+  private AppMediator mediator;
 
-  public CounterListPresenter(CounterListState state) {
-    this.state = state;
+  public CounterListPresenter(AppMediator mediator) {
+    this.mediator = mediator;
+    state = mediator.getCounterListState();
   }
+
+//  public CounterListPresenter(CounterListState state) {
+//    this.state = state;
+//  }
 
   @Override
   public void onStart() {
@@ -45,7 +52,8 @@ public class CounterListPresenter implements CounterListContract.Presenter {
     Log.e(TAG, "onResume()");
 
     // use passed state if is necessary
-    ClickToCounterState savedState = router.getStateFromNextScreen();
+    ClickToCounterState savedState = getStateFromNextScreen();
+    //ClickToCounterState savedState = router.getStateFromNextScreen();
     if (savedState != null) {
 
       // update the model if is necessary
@@ -81,8 +89,18 @@ public class CounterListPresenter implements CounterListContract.Presenter {
   public void onListPressed(CounterData counter) {
     Log.e(TAG, "onClickListPressed()");
 
-    router.passStateToNextScreen(new CounterToClickState(counter));
+    //router.passStateToNextScreen(new CounterToClickState(counter));
+    passStateToNextScreen(new CounterToClickState(counter));
     view.get().navigateToNextScreen();
+  }
+
+  private void passStateToNextScreen(CounterToClickState state) {
+    mediator.setNextMasterScreenState(state);
+  }
+
+
+  private ClickToCounterState getStateFromNextScreen() {
+    return mediator.getNextMasterScreenState();
   }
 
   @Override
@@ -103,8 +121,8 @@ public class CounterListPresenter implements CounterListContract.Presenter {
     this.model = model;
   }
 
-  @Override
-  public void injectRouter(CounterListContract.Router router) {
-    this.router = router;
-  }
+//  @Override
+//  public void injectRouter(CounterListContract.Router router) {
+//    this.router = router;
+//  }
 }
