@@ -11,7 +11,7 @@ import es.ulpgc.eite.cleancode.advclickcounter.app.CounterToClickState;
 
 public class CounterListPresenter implements CounterListContract.Presenter {
 
-  public static String TAG = CounterListPresenter.class.getSimpleName();
+  public static String TAG = "AdvClickCounter.CounterListPresenter";
 
   private WeakReference<CounterListContract.View> view;
   private CounterListState state;
@@ -21,7 +21,7 @@ public class CounterListPresenter implements CounterListContract.Presenter {
 
   public CounterListPresenter(AppMediator mediator) {
     this.mediator = mediator;
-    state = mediator.getCounterListState();
+    //state = mediator.getCounterListState();
   }
 
 //  public CounterListPresenter(CounterListState state) {
@@ -32,16 +32,20 @@ public class CounterListPresenter implements CounterListContract.Presenter {
   public void onStart() {
     Log.e(TAG, "onStart()");
 
-    // initialize the state if is necessary
-    if (state == null) {
+    // initialize the state
+    state = new CounterListState();
+    /*if (state == null) {
       state = new CounterListState();
-    }
+    }*/
 
   }
 
   @Override
   public void onRestart() {
     Log.e(TAG, "onRestart()");
+
+    // get back the state
+    state = mediator.getCounterListState();
 
     // update the model if is necessary
     model.onRestartScreen(state.counters);
@@ -78,6 +82,9 @@ public class CounterListPresenter implements CounterListContract.Presenter {
   @Override
   public void onPause() {
     Log.e(TAG, "onPause()");
+
+    // save the state
+    mediator.setCounterListState(state);
   }
 
   @Override

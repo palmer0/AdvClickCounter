@@ -1,5 +1,13 @@
 package es.ulpgc.eite.cleancode.advclickcounter;
 
+import static androidx.test.espresso.Espresso.onData;
+import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.Espresso.pressBack;
+import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static org.hamcrest.Matchers.allOf;
+
 import android.view.View;
 import android.widget.ListView;
 
@@ -9,15 +17,7 @@ import org.hamcrest.TypeSafeMatcher;
 
 import es.ulpgc.eite.cleancode.advclickcounter.data.BaseData;
 
-import static androidx.test.espresso.Espresso.onData;
-import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.Espresso.pressBack;
-import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static org.hamcrest.Matchers.allOf;
-
-public class AdvClickCounterRobot {
+public class EspressoRobot {
 
 
     private static Matcher<View> withListSize(final int size) {
@@ -118,7 +118,7 @@ public class AdvClickCounterRobot {
             .perform(click());
     }
 
-    public void pulsamosBackEnListaDeContadores() {
+    public void pulsamosBackEnListaDeClics() {
         pressBack();
     }
 }

@@ -13,7 +13,7 @@ import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 public class ClickListActivity
     extends AppCompatActivity implements ClickListContract.View {
 
-  public static String TAG = ClickListActivity.class.getSimpleName();
+  public static String TAG = "AdvClickCounter.ClickListActivity";
 
   private ClickListContract.Presenter presenter;
 

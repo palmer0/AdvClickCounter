@@ -10,7 +10,7 @@ import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 
 public class CounterListModel implements CounterListContract.Model {
 
-  public static String TAG = CounterListModel.class.getSimpleName();
+  public static String TAG = "AdvClickCounter.CounterListModel";
 
   private List<CounterData> counters;
 

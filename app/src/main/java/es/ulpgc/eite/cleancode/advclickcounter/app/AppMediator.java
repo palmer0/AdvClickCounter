@@ -14,8 +14,8 @@ public class AppMediator  {
   private CounterToClickState counterToClickState;
 
   private AppMediator() {
-    counterListState = new CounterListState();
-    clickListState = new ClickListState();
+    //counterListState = new CounterListState();
+    //clickListState = new ClickListState();
 
   }
 
@@ -29,6 +29,14 @@ public class AppMediator  {
 
   public static void resetInstance() {
     instance=null;
+  }
+
+  public void setCounterListState(CounterListState state) {
+    this.counterListState = state;
+  }
+
+  public void setClickListState(ClickListState state) {
+    this.clickListState = state;
   }
 
   public CounterListState getCounterListState() {

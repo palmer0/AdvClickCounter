@@ -15,7 +15,7 @@ import es.ulpgc.eite.cleancode.advclickcounter.data.CounterData;
 public class CounterListActivity
     extends AppCompatActivity implements CounterListContract.View {
 
-  public static String TAG = CounterListActivity.class.getSimpleName();
+  public static String TAG = "AdvClickCounter.CounterListActivity";
 
   private CounterListContract.Presenter presenter;
 
@@ -28,6 +28,7 @@ public class CounterListActivity
     if (savedInstanceState == null) {
       AppMediator.resetInstance();
     }
+
 
     // do the setup
     CounterListScreen.configure(this);
